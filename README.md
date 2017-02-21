@@ -1,3 +1,7 @@
+# **Advanced Lane Detection**
+
+The goal of this project is to detect lane lines in a video steam as accurately as possible and find the position of the vehicle on the road and the curvature of the road. This was achieved using the following steps.
+
 #### Camera Calibration and Undistortion
 
 I calibrated the camera using 20 images given by Udacity of a 10x7 chessboard. I extracted object points and image points from all the 20 images and fed them to the `calibrateCamera()` of OpenCV to get calibration and distortion matrices. Then I can apply the `undistort()` function to undistort every image.
@@ -210,6 +214,12 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 result = cv2.putText(result,curvature,(25,50), font, 1, (255,255,255),2,cv2.LINE_AA)
 result = cv2.putText(result,lane_dist,(25,100), font, 1, (255,255,255),2,cv2.LINE_AA)
 ```
+![](https://github.com/muddassir235/Advanced-Lane-Detection/blob/master/output_images/with_position.PNG?raw=true)
+
+## Result
+We got the following result after applying the pipeline to the `project_video.mp4`
+
+![](https://github.com/muddassir235/Advanced-Lane-Detection/blob/master/output_images/ezgif.com-video-to-gif.gif?raw=true)
 
 #### Discussion
 
