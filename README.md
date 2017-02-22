@@ -201,15 +201,17 @@ xm_per_pix = 3.7/700.0 # meters per pixel in x dimension
 left_curverad = ((1 + (2*left_fit[0]*y_eval*ym_per_pix + left_fit[1])**2)**1.5) / np.absolute(2*left_fit[0])
 right_curverad = ((1 + (2*right_fit[0]*y_eval*ym_per_pix + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])
 
-left_distance = - (left_fit[0]*y_eval**2 + left_fit[1]*y_eval + left_fit[2]) + binary_warped.shape[1]/2.0
-right_distance = (right_fit[0]*y_eval**2 + right_fit[1]*y_eval + right_fit[2]) - binary_warped.shape[1]/2.0
+left_pos = (left_fit[0]*y_eval**2 + left_fit[1]*y_eval + left_fit[2])
+right_pos = (right_fit[0]*y_eval**2 + right_fit[1]*y_eval + right_fit[2])
 
-left_dist_m = xm_per_pix*left_distance
-right_dist_m = xm_per_pix*right_distance
+lanes_mid = (left_pos+right_pos)/2.0
 
-print(str(left_dist_m), str(right_dist_m))
+distance_from_mid = binary_warped.shape[1]/2.0 - lanes_mid
+
+mid_dist_m = xm_per_pix*distance_from_mid
+
 curvature = 'Radius: '+ str(left_curverad) + ' m, ' + str(right_curverad) + " m"
-lane_dist = 'Lane Distance: '+str(left_dist_m)+'m left, '+str(right_dist_m)+'m right'
+lane_dist = 'Distance From Road Center: '+str(mid_dist_m)+' m'
 font = cv2.FONT_HERSHEY_SIMPLEX
 result = cv2.putText(result,curvature,(25,50), font, 1, (255,255,255),2,cv2.LINE_AA)
 result = cv2.putText(result,lane_dist,(25,100), font, 1, (255,255,255),2,cv2.LINE_AA)
