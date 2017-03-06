@@ -241,6 +241,7 @@ if len(self.heatmaps)>18:
 ```
 
 The Summed Heatmap of the past 18 frames looks as follows,
+
 <img src="./output_images/test_gif.gif"  width="300" height="180" /><img src="./output_images/heat_gif.gif" width="300" height="180" />
 
 In this case we do get some false positives and in order to eliminate them as much as possible without affecting the vehicle detection I chose a `heat_threshold` of **9** heat value.
@@ -250,6 +251,7 @@ thresh_heat = apply_threshold(self.heatmap_sum, self.heat_thresh)
 ```
 
 After applying the threshold I got the following resulting Heatmap.
+
 <img src="./output_images/test_gif.gif"  width="300" height="180" /><img src="./output_images/heat_thresh_gif.gif" width="300" height="180" />
 
 I then used the `scipy.ndimage.measurements.label()` function on the thresholded heatmap to get the final bounding boxes for the cars. I used the following function (available under the **Heatmap Functions** heading in the project notebook) to draw the final label boxes on the frame.
@@ -272,6 +274,7 @@ def draw_labeled_bboxes(img, labels):
 ```
 
 After drawing the label boxes I got the following result.
+
 <img src="./output_images/processed_gif.gif" width="600" height="360" />
 
 
