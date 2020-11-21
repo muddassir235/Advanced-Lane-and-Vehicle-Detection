@@ -530,3 +530,10 @@ We got the following result after applying the pipeline to the `project_video.mp
 ## [Apps by Muddassir Ahmed](https://play.google.com/store/apps/developer?id=Muddassir+Khan):
 * https://play.google.com/store/apps/details?id=com.muddassirkhan.quran_android
 * https://play.google.com/store/apps/details?id=com.app.kitaabattawheed
+
+
+## Muddassir Ahmed Links:
+
+* https://www.linkedin.com/in/muddassir35/
+* https://muddassirahmed.medium.com/
+* https://stackoverflow.com/users/5841416/muddassir-ahmed
