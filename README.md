@@ -525,3 +525,8 @@ We got the following result after applying the pipeline to the `project_video.mp
 * I had a really hard time figuring out the right function for getting a binary image which emphasizes the lane lines.
 * Also I think my lane finding pipeline can be improved greatly by Improving the stage where the lane lines are extracted from the binary image using a histogram.
 * Also another improvement would be averaging with lane line from previous frames in order to get a smoother fit and reduce jitter.
+
+
+## [Apps by Muddassir Ahmed](https://play.google.com/store/apps/developer?id=Muddassir+Khan):
+* https://play.google.com/store/apps/details?id=com.muddassirkhan.quran_android
+* https://play.google.com/store/apps/details?id=com.app.kitaabattawheed
